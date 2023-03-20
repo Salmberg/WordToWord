@@ -1,24 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word To Word!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-30-YXv">
+                                <rect key="frame" x="10" y="69" width="373" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiT-JM-feW">
+                                <rect key="frame" x="39" y="194" width="314" height="101.66666666666669"/>
+                                <string key="text">Welcome to Word To Word! The rules are simple: we will give you a word on the screen. Then you have 3 seconds to write that exact word. You have 10 rounds to get as many pionts as possible</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you make it you will get one point. If you don´t, you lose one point. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-XE-ucS">
+                                <rect key="frame" x="60" y="283" width="273" height="147"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-jU-ZH8">
+                                <rect key="frame" x="146" y="680" width="100" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Lets go!"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0p2-30-YXv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0Yz-Ce-Ofa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hSt-jU-ZH8" secondAttribute="bottom" constant="104" id="6Mj-wR-uLH"/>
+                            <constraint firstItem="CiT-JM-feW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="HfX-p7-CNa"/>
+                            <constraint firstItem="sDZ-XE-ucS" firstAttribute="top" secondItem="CiT-JM-feW" secondAttribute="bottom" constant="8" symbolic="YES" id="MvI-HU-ZmZ"/>
+                            <constraint firstItem="0p2-30-YXv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="U8u-1e-ygh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSt-jU-ZH8" secondAttribute="trailing" constant="159" id="Y2e-tS-0Ot"/>
+                            <constraint firstItem="sDZ-XE-ucS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="hK0-Bf-DGO"/>
+                            <constraint firstItem="CiT-JM-feW" firstAttribute="top" secondItem="0p2-30-YXv" secondAttribute="bottom" constant="95" id="kOD-TQ-xgv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sDZ-XE-ucS" secondAttribute="trailing" constant="60" id="p5s-bz-BNI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CiT-JM-feW" secondAttribute="trailing" constant="40" id="pXM-dT-70v"/>
+                            <constraint firstItem="hSt-jU-ZH8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="q2l-TZ-FeS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0p2-30-YXv" secondAttribute="trailing" constant="10" id="v7I-5I-Wx5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5ot-Dg-dRb">
+            <objects>
+                <viewController id="m7J-wM-xsF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Wk-CX-5QA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The word to write" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-QX-1Rq">
+                                <rect key="frame" x="69" y="279" width="254" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rW8-hn-rs5">
+                                <rect key="frame" x="125" y="487" width="142" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7j-0k-qxz">
+                                <rect key="frame" x="118" y="111" width="157" height="25.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SbT-s1-f98"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="hce-QX-1Rq" secondAttribute="trailing" constant="70" id="2fb-kk-f5v"/>
+                            <constraint firstItem="hce-QX-1Rq" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="220" id="4eG-QG-PrS"/>
+                            <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="rW8-hn-rs5" secondAttribute="trailing" constant="148" id="Bwe-Uq-XlN"/>
+                            <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="Z7j-0k-qxz" secondAttribute="trailing" constant="118" id="J2g-8e-vyh"/>
+                            <constraint firstItem="hce-QX-1Rq" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="69" id="WYN-Cx-e3N"/>
+                            <constraint firstItem="rW8-hn-rs5" firstAttribute="top" secondItem="hce-QX-1Rq" secondAttribute="bottom" constant="180" id="dSX-JZ-8VZ"/>
+                            <constraint firstItem="rW8-hn-rs5" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="148" id="fzK-id-thD"/>
+                            <constraint firstItem="Z7j-0k-qxz" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="52" id="k5n-J7-7aW"/>
+                            <constraint firstItem="Z7j-0k-qxz" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="118" id="pTd-cp-sfy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKm-cg-nDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887.78625954198469" y="-27.464788732394368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RBg-V0-Fib">
+            <objects>
+                <viewController id="Sft-dA-mZX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wWS-uO-QdW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fqM-qA-D6N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3E-Ci-Ltn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
