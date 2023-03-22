@@ -70,13 +70,13 @@
         <!--Game View Controller-->
         <scene sceneID="5ot-Dg-dRb">
             <objects>
-                <viewController id="m7J-wM-xsF" customClass="GameViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="m7J-wM-xsF" customClass="GameViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Wk-CX-5QA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The word to write" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-QX-1Rq">
-                                <rect key="frame" x="69" y="279" width="254" height="28"/>
+                                <rect key="frame" x="69" y="366" width="254" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,8 +87,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7j-0k-qxz">
-                                <rect key="frame" x="118" y="111" width="157" height="25.333333333333343"/>
+                                <rect key="frame" x="118" y="181" width="157" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al4-HR-2zH">
+                                <rect key="frame" x="60" y="70" width="138" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TQ-Jm-RSf">
+                                <rect key="frame" x="239" y="70" width="138" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -97,19 +111,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="hce-QX-1Rq" secondAttribute="trailing" constant="70" id="2fb-kk-f5v"/>
-                            <constraint firstItem="hce-QX-1Rq" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="220" id="4eG-QG-PrS"/>
+                            <constraint firstItem="Z7j-0k-qxz" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="122" id="4LW-lg-8eB"/>
                             <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="rW8-hn-rs5" secondAttribute="trailing" constant="148" id="Bwe-Uq-XlN"/>
                             <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="Z7j-0k-qxz" secondAttribute="trailing" constant="118" id="J2g-8e-vyh"/>
                             <constraint firstItem="hce-QX-1Rq" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="69" id="WYN-Cx-e3N"/>
                             <constraint firstItem="rW8-hn-rs5" firstAttribute="top" secondItem="hce-QX-1Rq" secondAttribute="bottom" constant="180" id="dSX-JZ-8VZ"/>
                             <constraint firstItem="rW8-hn-rs5" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="148" id="fzK-id-thD"/>
-                            <constraint firstItem="Z7j-0k-qxz" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="52" id="k5n-J7-7aW"/>
+                            <constraint firstItem="hce-QX-1Rq" firstAttribute="top" secondItem="Z7j-0k-qxz" secondAttribute="bottom" constant="159.66999999999999" id="jDg-SS-S6q"/>
                             <constraint firstItem="Z7j-0k-qxz" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="118" id="pTd-cp-sfy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8gH-9h-Xtn"/>
                     <connections>
                         <outlet property="countdownLabel" destination="Z7j-0k-qxz" id="hqx-A2-4gG"/>
+                        <outlet property="pointsLabel" destination="5TQ-Jm-RSf" id="6kX-oJ-Tlc"/>
+                        <outlet property="roundsLabel" destination="al4-HR-2zH" id="15X-uv-0hP"/>
+                        <outlet property="userInputTextField" destination="rW8-hn-rs5" id="hBx-mr-YKM"/>
                         <outlet property="wordToWriteLabel" destination="hce-QX-1Rq" id="Z2D-OK-mfu"/>
                     </connections>
                 </viewController>
