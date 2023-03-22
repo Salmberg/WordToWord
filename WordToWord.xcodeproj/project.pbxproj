@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB504CF529CA310100D1B27F /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB504CF429CA310100D1B27F /* WordData.swift */; };
 		CB998BA929C891B7003DF286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BA829C891B7003DF286 /* AppDelegate.swift */; };
 		CB998BAB29C891B7003DF286 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BAA29C891B7003DF286 /* SceneDelegate.swift */; };
 		CB998BAD29C891B7003DF286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BAC29C891B7003DF286 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB504CF429CA310100D1B27F /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
 		CB998BA529C891B7003DF286 /* WordToWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordToWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB998BA829C891B7003DF286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB998BAA29C891B7003DF286 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB504CF329CA30C100D1B27F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB504CF429CA310100D1B27F /* WordData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CB998B9C29C891B7003DF286 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		CB998BA729C891B7003DF286 /* WordToWord */ = {
 			isa = PBXGroup;
 			children = (
+				CB504CF329CA30C100D1B27F /* Model */,
 				CB998BD829C8968A003DF286 /* ViewControllers */,
 				CB998BA829C891B7003DF286 /* AppDelegate.swift */,
 				CB998BAA29C891B7003DF286 /* SceneDelegate.swift */,
@@ -277,6 +288,7 @@
 				CB998BAD29C891B7003DF286 /* ViewController.swift in Sources */,
 				CB998BA929C891B7003DF286 /* AppDelegate.swift in Sources */,
 				CB998BAB29C891B7003DF286 /* SceneDelegate.swift in Sources */,
+				CB504CF529CA310100D1B27F /* WordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

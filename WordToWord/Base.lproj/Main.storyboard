@@ -29,32 +29,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you make it you will get one point. If you don´t, you lose one point. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-XE-ucS">
-                                <rect key="frame" x="60" y="283" width="273" height="147"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you make it you will get one point. If you don´t, you lose one point. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-XE-ucS">
+                                <rect key="frame" x="60" y="303.66666666666669" width="273" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-jU-ZH8">
-                                <rect key="frame" x="146" y="680" width="100" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-jU-ZH8">
+                                <rect key="frame" x="128" y="680" width="136" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lets go!"/>
+                                <connections>
+                                    <segue destination="m7J-wM-xsF" kind="show" id="ZLQ-3Y-LCC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0p2-30-YXv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0Yz-Ce-Ofa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hSt-jU-ZH8" secondAttribute="bottom" constant="104" id="6Mj-wR-uLH"/>
+                            <constraint firstItem="sDZ-XE-ucS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="DNt-sv-3lu"/>
                             <constraint firstItem="CiT-JM-feW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="HfX-p7-CNa"/>
                             <constraint firstItem="sDZ-XE-ucS" firstAttribute="top" secondItem="CiT-JM-feW" secondAttribute="bottom" constant="8" symbolic="YES" id="MvI-HU-ZmZ"/>
                             <constraint firstItem="0p2-30-YXv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="U8u-1e-ygh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSt-jU-ZH8" secondAttribute="trailing" constant="159" id="Y2e-tS-0Ot"/>
-                            <constraint firstItem="sDZ-XE-ucS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="hK0-Bf-DGO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sDZ-XE-ucS" secondAttribute="trailing" constant="60" id="VyA-eb-TiX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hSt-jU-ZH8" secondAttribute="bottom" constant="103" id="YMD-Ig-91J"/>
                             <constraint firstItem="CiT-JM-feW" firstAttribute="top" secondItem="0p2-30-YXv" secondAttribute="bottom" constant="95" id="kOD-TQ-xgv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sDZ-XE-ucS" secondAttribute="trailing" constant="60" id="p5s-bz-BNI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSt-jU-ZH8" secondAttribute="trailing" constant="129" id="pBu-i9-5xx"/>
+                            <constraint firstItem="hSt-jU-ZH8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="pJo-oy-0dj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CiT-JM-feW" secondAttribute="trailing" constant="40" id="pXM-dT-70v"/>
-                            <constraint firstItem="hSt-jU-ZH8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="q2l-TZ-FeS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0p2-30-YXv" secondAttribute="trailing" constant="10" id="v7I-5I-Wx5"/>
                         </constraints>
                     </view>
@@ -63,12 +67,12 @@
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="5ot-Dg-dRb">
             <objects>
-                <viewController id="m7J-wM-xsF" sceneMemberID="viewController">
+                <viewController id="m7J-wM-xsF" customClass="GameViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Wk-CX-5QA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The word to write" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-QX-1Rq">
@@ -103,6 +107,11 @@
                             <constraint firstItem="Z7j-0k-qxz" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="118" id="pTd-cp-sfy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8gH-9h-Xtn"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="Z7j-0k-qxz" id="hqx-A2-4gG"/>
+                        <outlet property="wordToWriteLabel" destination="hce-QX-1Rq" id="Z2D-OK-mfu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKm-cg-nDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,22 +8,38 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    var countdownTimer: Timer!
+        var totalTime = 3 // Total time for the countdown timer
+        var timeLeft = 3 // Current time left for the countdown timer
+        
+        @IBOutlet weak var countdownLabel: UILabel!
+    
+        @IBOutlet weak var wordToWriteLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+        
+            
+            // Initialize the countdown timer
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        }
+        
+        // Function to update the countdown timer
+        @objc func updateTimer() {
+            if timeLeft > 0 {
+                timeLeft -= 1
+                countdownLabel.text = "Time left: \(timeLeft)"
+            } else {
+                endTimer()
+            }
+        }
+        // Function to end the countdown timer
+        func endTimer() {
+            countdownTimer.invalidate()
+            countdownLabel.text = "Time's up!"
+        }
 }
