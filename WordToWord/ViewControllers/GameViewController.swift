@@ -1,10 +1,11 @@
+
+
 //
 //  GameViewController.swift
 //  WordToWord
 //
 //  Created by David Salmberg on 2023-03-20.
 //
-
 import UIKit
 
 class GameViewController: UIViewController,UITextFieldDelegate {
@@ -12,14 +13,15 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     let segueIdGOTOFinish = "goToFinsh"
     
     var rounds = -1
-    var points: Int? = 1
+    var points: Int? = 0
     var countdownTimer: Timer!
     var totalTime = 10 // Total time for the countdown timer
-    var timeLeft = 20 // Current time left for the countdown timer
+    var timeLeft = 10 // Current time left for the countdown timer
     
     @IBOutlet weak var countdownLabel: UILabel!
     
     @IBOutlet weak var wordToWriteLabel: UILabel!
+    
     
     @IBOutlet weak var userInputTextField: UITextField!
     
@@ -32,6 +34,8 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("from the top")
+        
         userInputTextField.becomeFirstResponder()
         userInputTextField.delegate = self
         
@@ -43,6 +47,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("going to checkAnswer()")
         checkAnswer()
         return true
     }
@@ -51,6 +56,8 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     }
     
     func startGame(){
+        print("inside startGame")
+        points = 1
         getNewWord()
         checkAnswer()
         
@@ -79,6 +86,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     
     
     func getNewWord() {
+        print("inside getNewWord")
         //Invalidates the old timer
         countdownTimer?.invalidate()
         if let shuffledWord = wordDataManager.getRandomWord() {
@@ -91,8 +99,16 @@ class GameViewController: UIViewController,UITextFieldDelegate {
                 rounds += 1
                 roundsLabel.text = "Round: \(rounds )"
             } else {
+                print("first segue in if statement")
                 self.performSegue(withIdentifier: "goToFinish", sender: nil)
+                
+                //Reset rounds
+                rounds = -1
             }
+            
+            
+            //Reset rounds
+            
             
             // Reset the timer
             timeLeft = totalTime
@@ -101,9 +117,11 @@ class GameViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    
     var isSeguePerformed = false
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("func prepare")
         if segue.identifier == "goToFinish" {
             if let destinationVC = segue.destination as? FinishViewController, let currentPoints = points {
                 if rounds >= 10 {
@@ -118,6 +136,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     }
     
     func checkAnswer() {
+        print("inside checkAnswer")
         let wordToWrite = wordToWriteLabel.text
         let userInput = userInputTextField.text
         print("wordToWrite: \(String(describing: wordToWrite))")
@@ -150,7 +169,4 @@ class GameViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    
 }
-
-

@@ -76,16 +76,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The word to write" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-QX-1Rq">
-                                <rect key="frame" x="69" y="366" width="254" height="28"/>
+                                <rect key="frame" x="69" y="278" width="254" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rW8-hn-rs5">
-                                <rect key="frame" x="125" y="487" width="142" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7j-0k-qxz">
                                 <rect key="frame" x="118" y="181" width="157" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -106,18 +101,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Pf-dg-BSz">
+                                <rect key="frame" x="108" y="362" width="176" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SbT-s1-f98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="hce-QX-1Rq" secondAttribute="trailing" constant="70" id="2fb-kk-f5v"/>
                             <constraint firstItem="Z7j-0k-qxz" firstAttribute="top" secondItem="SbT-s1-f98" secondAttribute="top" constant="122" id="4LW-lg-8eB"/>
-                            <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="rW8-hn-rs5" secondAttribute="trailing" constant="148" id="Bwe-Uq-XlN"/>
+                            <constraint firstItem="0Pf-dg-BSz" firstAttribute="top" secondItem="hce-QX-1Rq" secondAttribute="bottom" constant="56" id="G0J-SI-iGy"/>
                             <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="Z7j-0k-qxz" secondAttribute="trailing" constant="118" id="J2g-8e-vyh"/>
+                            <constraint firstItem="SbT-s1-f98" firstAttribute="trailing" secondItem="0Pf-dg-BSz" secondAttribute="trailing" constant="109" id="JXc-fm-nH1"/>
+                            <constraint firstItem="hce-QX-1Rq" firstAttribute="top" secondItem="Z7j-0k-qxz" secondAttribute="bottom" constant="71.670000000000002" id="VBe-zj-p7C"/>
                             <constraint firstItem="hce-QX-1Rq" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="69" id="WYN-Cx-e3N"/>
-                            <constraint firstItem="rW8-hn-rs5" firstAttribute="top" secondItem="hce-QX-1Rq" secondAttribute="bottom" constant="180" id="dSX-JZ-8VZ"/>
-                            <constraint firstItem="rW8-hn-rs5" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="148" id="fzK-id-thD"/>
-                            <constraint firstItem="hce-QX-1Rq" firstAttribute="top" secondItem="Z7j-0k-qxz" secondAttribute="bottom" constant="159.66999999999999" id="jDg-SS-S6q"/>
+                            <constraint firstItem="0Pf-dg-BSz" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="108" id="fus-wJ-Ip1"/>
                             <constraint firstItem="Z7j-0k-qxz" firstAttribute="leading" secondItem="SbT-s1-f98" secondAttribute="leading" constant="118" id="pTd-cp-sfy"/>
                         </constraints>
                     </view>
@@ -126,7 +126,7 @@
                         <outlet property="countdownLabel" destination="Z7j-0k-qxz" id="hqx-A2-4gG"/>
                         <outlet property="pointsLabel" destination="5TQ-Jm-RSf" id="6kX-oJ-Tlc"/>
                         <outlet property="roundsLabel" destination="al4-HR-2zH" id="15X-uv-0hP"/>
-                        <outlet property="userInputTextField" destination="rW8-hn-rs5" id="hBx-mr-YKM"/>
+                        <outlet property="userInputTextField" destination="0Pf-dg-BSz" id="9rg-mM-exH"/>
                         <outlet property="wordToWriteLabel" destination="hce-QX-1Rq" id="Z2D-OK-mfu"/>
                         <segue destination="Sft-dA-mZX" kind="show" identifier="goToFinish" id="zhr-uV-BvP"/>
                     </connections>
@@ -138,9 +138,9 @@
         <!--Finish View Controller-->
         <scene sceneID="RBg-V0-Fib">
             <objects>
-                <viewController id="Sft-dA-mZX" customClass="FinishViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Sft-dA-mZX" customClass="FinishViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wWS-uO-QdW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rounds up!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X1-pZ-XhX">
@@ -181,7 +181,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bgS-cE-Qos"/>
+        <segue reference="ZLQ-3Y-LCC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
