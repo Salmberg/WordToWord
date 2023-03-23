@@ -22,6 +22,9 @@ class WordDataManager {
     return shuffledWords.first?.word
 
 }
+    
+    
+    
 
    
 }

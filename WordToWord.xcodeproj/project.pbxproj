@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB504CF529CA310100D1B27F /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB504CF429CA310100D1B27F /* WordData.swift */; };
+		CB74C53929CC7F3000E14CC7 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C53829CC7F3000E14CC7 /* FinishViewController.swift */; };
 		CB998BA929C891B7003DF286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BA829C891B7003DF286 /* AppDelegate.swift */; };
 		CB998BAB29C891B7003DF286 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BAA29C891B7003DF286 /* SceneDelegate.swift */; };
 		CB998BAD29C891B7003DF286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB998BAC29C891B7003DF286 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		CB504CF429CA310100D1B27F /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
+		CB74C53829CC7F3000E14CC7 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		CB998BA529C891B7003DF286 /* WordToWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordToWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB998BA829C891B7003DF286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB998BAA29C891B7003DF286 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				CB998BAC29C891B7003DF286 /* ViewController.swift */,
 				CB998BD929C896AD003DF286 /* GameViewController.swift */,
 				CB998BDB29C896C7003DF286 /* ResultViewController.swift */,
+				CB74C53829CC7F3000E14CC7 /* FinishViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				CB998BDC29C896C7003DF286 /* ResultViewController.swift in Sources */,
 				CB998BDA29C896AD003DF286 /* GameViewController.swift in Sources */,
 				CB998BAD29C891B7003DF286 /* ViewController.swift in Sources */,
+				CB74C53929CC7F3000E14CC7 /* FinishViewController.swift in Sources */,
 				CB998BA929C891B7003DF286 /* AppDelegate.swift in Sources */,
 				CB998BAB29C891B7003DF286 /* SceneDelegate.swift in Sources */,
 				CB504CF529CA310100D1B27F /* WordData.swift in Sources */,
