@@ -20,6 +20,13 @@ class WordDataManager {
     func getRandomWord() -> String? {
     let shuffledWords = listOfWords.shuffled()
     return shuffledWords.first?.word
+        
+        
+        
+        
+        
+        
+        
 
 }
     

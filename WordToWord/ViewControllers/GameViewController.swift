@@ -29,6 +29,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var pointsLabel: UILabel!
     
+    
     let wordDataManager = WordDataManager()
     
     override func viewDidLoad() {
@@ -41,10 +42,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
         
         startGame()
         isSeguePerformed = false // reset the flag
-        
-        
     }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("going to checkAnswer()")
@@ -99,16 +97,12 @@ class GameViewController: UIViewController,UITextFieldDelegate {
                 rounds += 1
                 roundsLabel.text = "Round: \(rounds )"
             } else {
+                countdownTimer?.invalidate()
                 print("first segue in if statement")
                 self.performSegue(withIdentifier: "goToFinish", sender: nil)
-                
                 //Reset rounds
                 rounds = -1
             }
-            
-            
-            //Reset rounds
-            
             
             // Reset the timer
             timeLeft = totalTime
@@ -116,8 +110,6 @@ class GameViewController: UIViewController,UITextFieldDelegate {
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         }
     }
-    
-    
     var isSeguePerformed = false
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,7 +117,9 @@ class GameViewController: UIViewController,UITextFieldDelegate {
         if segue.identifier == "goToFinish" {
             if let destinationVC = segue.destination as? FinishViewController, let currentPoints = points {
                 if rounds >= 10 {
+                    print(currentPoints)
                     destinationVC.points = currentPoints
+                    
                 } else {
                     // Don't perform the segue if rounds is less than 10
                     // You can also display an alert to inform the user
@@ -163,10 +157,9 @@ class GameViewController: UIViewController,UITextFieldDelegate {
                 points = currentPoints - 1
             } else {
                 points = -1
-                
             }
             pointsLabel.text = "Points: \(points ?? 0)"
         }
     }
-    
+
 }
