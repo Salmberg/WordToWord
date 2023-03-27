@@ -8,12 +8,13 @@
 //
 import UIKit
 
-class GameViewController: UIViewController,UITextFieldDelegate {
+class GameViewController: UIViewController {
     
     let segueIdGOTOFinish = "goToFinsh"
     
-    var rounds = -1
-    var points: Int? = 0
+    var rounds = 0
+    var points = 0
+    var countingPoints = 0
     var countdownTimer: Timer!
     var totalTime = 10 // Total time for the countdown timer
     var timeLeft = 10 // Current time left for the countdown timer
@@ -21,7 +22,6 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var countdownLabel: UILabel!
     
     @IBOutlet weak var wordToWriteLabel: UILabel!
-    
     
     @IBOutlet weak var userInputTextField: UITextField!
     
@@ -36,48 +36,29 @@ class GameViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         
         print("from the top")
+        startGame()
         
         userInputTextField.becomeFirstResponder()
-        userInputTextField.delegate = self
         
-        startGame()
-        isSeguePerformed = false // reset the flag
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("going to checkAnswer()")
-        checkAnswer()
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        checkAnswer()
-    }
-    
-    func startGame(){
-        print("inside startGame")
-        points = 1
-        getNewWord()
-        checkAnswer()
+        userInputTextField.addTarget(self, action: #selector(checkMatch), for: .editingChanged)
         
     }
     
-    // Function to update the countdown timer
-    @objc func updateTimer() {
-        if timeLeft > 0 {
-            timeLeft -= 1
-            countdownLabel.text = "Time left: \(timeLeft)"
-            
-            
-        } else {
-            endTimer()
-        }
+    
+    
+    @objc func checkMatch(){
+        checkAnswer()
     }
+    
+    
+   
+    
     // Function to end the countdown timer
-    func endTimer() {
-        countdownTimer.invalidate()
-        countdownLabel.text = "Time's up!"
+    func startGame() {
+        print("Inside start game")
+        countdownTimer?.invalidate()
+        resetTimer()
         userInputTextField.text = ""
-        checkAnswer()
         getNewWord()
         
     }
@@ -85,8 +66,7 @@ class GameViewController: UIViewController,UITextFieldDelegate {
     
     func getNewWord() {
         print("inside getNewWord")
-        //Invalidates the old timer
-        countdownTimer?.invalidate()
+        print(countingPoints)
         if let shuffledWord = wordDataManager.getRandomWord() {
             // Set the text of wordToWriteLabel to the shuffled word
             wordToWriteLabel.text = shuffledWord
@@ -97,69 +77,62 @@ class GameViewController: UIViewController,UITextFieldDelegate {
                 rounds += 1
                 roundsLabel.text = "Round: \(rounds )"
             } else {
-                countdownTimer?.invalidate()
-                print("first segue in if statement")
-                self.performSegue(withIdentifier: "goToFinish", sender: nil)
-                //Reset rounds
-                rounds = -1
+                endGame()
             }
-            
-            // Reset the timer
-            timeLeft = totalTime
-            countdownLabel.text = "Time left: \(timeLeft)"
-            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         }
     }
-    var isSeguePerformed = false
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("func prepare")
-        if segue.identifier == "goToFinish" {
-            if let destinationVC = segue.destination as? FinishViewController, let currentPoints = points {
-                if rounds >= 10 {
-                    print(currentPoints)
-                    destinationVC.points = currentPoints
-                    
-                } else {
-                    // Don't perform the segue if rounds is less than 10
-                    // You can also display an alert to inform the user
-                    // that they need to complete at least 10 rounds
-                }
-            }
+    func resetTimer(){
+        // Reset the timer
+       timeLeft = totalTime
+       countdownLabel.text = "Time left: \(timeLeft)"
+       countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+    }
+    // Function to update the countdown timer
+    @objc func updateTimer() {
+        if timeLeft > 0 {
+            timeLeft -= 1
+            countdownLabel.text = "Time left: \(timeLeft)"
+            
+        } else {
+            startGame()
         }
     }
+    
+    
+  
     
     func checkAnswer() {
         print("inside checkAnswer")
-        let wordToWrite = wordToWriteLabel.text
-        let userInput = userInputTextField.text
-        print("wordToWrite: \(String(describing: wordToWrite))")
-        print("userInput: \(String(describing: userInput))")
-        if wordToWrite == userInput {
-            print("Rätt!")
-            getNewWord()
-            // The user input matches the displayed word
-            // Add a point to the points variable
-            if let currentPoints = points {
-                points = currentPoints + 1
-            } else {
-                points = -1
-                
-            }
-            pointsLabel.text = "Points: \(points ?? 0)"
+        
+        guard let word = wordToWriteLabel.text,
+              let writeWord = userInputTextField.text
+        else{
+            return
             
-        } else {
-            getNewWord()
-            
-            // The user input does not match the displayed word
-            // Subtract one point from the points variable
-            if let currentPoints = points {
-                points = currentPoints - 1
-            } else {
-                points = -1
-            }
-            pointsLabel.text = "Points: \(points ?? 0)"
         }
+        if word == writeWord {
+            
+            countingPoints += 1
+            pointsLabel.text = "Poäng: \(countingPoints)"
+            startGame()
+        } else {
+            return
+        }
+        
+        
     }
-
+    
+    
+    func endGame(){
+       
+        if let finalPointsVC = storyboard?.instantiateViewController(withIdentifier: "FinishViewController") as? FinishViewController {
+                          finalPointsVC.points = countingPoints
+                          present(finalPointsVC, animated: true, completion: nil)
+                      }
+        //Reset rounds
+        rounds = -1
+        
+    }
 }

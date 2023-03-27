@@ -32,7 +32,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-jU-ZH8">
                                 <rect key="frame" x="128" y="680" width="136" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Lets go!"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Lets go!">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="m7J-wM-xsF" kind="show" id="ZLQ-3Y-LCC"/>
                                 </connections>
@@ -150,7 +152,7 @@
         <!--Finish View Controller-->
         <scene sceneID="RBg-V0-Fib">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Sft-dA-mZX" customClass="FinishViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinishViewController" modalPresentationStyle="fullScreen" id="Sft-dA-mZX" customClass="FinishViewController" customModule="WordToWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wWS-uO-QdW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +172,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzy-mY-C4E">
                                 <rect key="frame" x="137" y="613" width="119" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play again"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play again">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="m7J-wM-xsF" kind="show" id="bgS-cE-Qos"/>
                                 </connections>
@@ -201,7 +205,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZLQ-3Y-LCC"/>
+        <segue reference="bgS-cE-Qos"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Ämne" width="499" height="489"/>
