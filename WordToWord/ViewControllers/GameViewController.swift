@@ -45,13 +45,11 @@ class GameViewController: UIViewController {
     }
     
     
-    
     @objc func checkMatch(){
         checkAnswer()
     }
     
-    
-   
+
     
     // Function to end the countdown timer
     func startGame() {
@@ -95,13 +93,18 @@ class GameViewController: UIViewController {
             timeLeft -= 1
             countdownLabel.text = "Time left: \(timeLeft)"
             
-        } else {
+            //If the counter ends and not the right answer take on piont of, if the points are more then 0. Otherwise get a new round.
+        } else if (timeLeft == 0) && countingPoints > 0 {
+            countingPoints -= 1
+            pointsLabel.text = "Poäng: \(countingPoints)"
+            startGame()
+        }
+        else {
             startGame()
         }
     }
     
     
-  
     
     func checkAnswer() {
         print("inside checkAnswer")
@@ -113,20 +116,18 @@ class GameViewController: UIViewController {
             
         }
         if word == writeWord {
-            
             countingPoints += 1
             pointsLabel.text = "Poäng: \(countingPoints)"
             startGame()
         } else {
-            return
+            
         }
-        
-        
     }
     
     
     func endGame(){
        
+        //Sending the points to FinishViewController
         if let finalPointsVC = storyboard?.instantiateViewController(withIdentifier: "FinishViewController") as? FinishViewController {
                           finalPointsVC.points = countingPoints
                           present(finalPointsVC, animated: true, completion: nil)
