@@ -21,14 +21,8 @@ class WordDataManager {
     let shuffledWords = listOfWords.shuffled()
     return shuffledWords.first?.word
         
-        
-        
 
 }
-    
-    
-    
-
    
 }
 
