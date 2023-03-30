@@ -25,7 +25,7 @@ class FinishViewController: UIViewController {
         enterNameTextField.becomeFirstResponder()
         
         if let unwrappedPoints = points {
-            pointsLabel.text = "Nice! in 10 rounds you got \(unwrappedPoints) points"
+            pointsLabel.text = "Nice! You got \(unwrappedPoints) points"
         } else {
             // handle the case where points is nil
         }
@@ -34,18 +34,19 @@ class FinishViewController: UIViewController {
     
     @IBAction func saveScore(_ sender: Any) {
         
-        
-        
         performSegue(withIdentifier: "highscoreSegue", sender: self)
+        enterNameTextField.text = ""
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "highscoreSegue" {
             if let destinationVC = segue.destination as? HighScoreViewController {
-                destinationVC.name = enterNameTextField.text
-                destinationVC.points = points
+                if let name = enterNameTextField.text, let points = points {
+                    destinationVC.addHighScore(name: name, points: points)
+                }
             }
         }
     }
+
 }

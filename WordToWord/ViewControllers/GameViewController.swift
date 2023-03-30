@@ -10,14 +10,15 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    
+    
     let segueIdGOTOFinish = "goToFinsh"
     
-    var rounds = 0
     var points = 0
     var countingPoints = 0
     var countdownTimer: Timer!
-    var totalTime = 10 // Total time for the countdown timer
-    var timeLeft = 10 // Current time left for the countdown timer
+    var totalTime = 20 // Total time for the countdown timer
+    var timeLeft = 20 // Current time left for the countdown timer
     
     @IBOutlet weak var countdownLabel: UILabel!
     
@@ -34,6 +35,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         print("from the top")
         startGame()
@@ -70,13 +73,6 @@ class GameViewController: UIViewController {
             wordToWriteLabel.text = shuffledWord
             userInputTextField.text = ""
             
-            //Start a new round
-            if rounds < 10 {
-                rounds += 1
-                roundsLabel.text = "Round: \(rounds )"
-            } else {
-                endGame()
-            }
         }
     }
     
@@ -86,6 +82,7 @@ class GameViewController: UIViewController {
        countdownLabel.text = "Time left: \(timeLeft)"
        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
+        
     }
     // Function to update the countdown timer
     @objc func updateTimer() {
@@ -94,14 +91,11 @@ class GameViewController: UIViewController {
             countdownLabel.text = "Time left: \(timeLeft)"
             
             //If the counter ends and not the right answer take on piont of, if the points are more then 0. Otherwise get a new round.
-        } else if (timeLeft == 0) && countingPoints > 0 {
-            countingPoints -= 1
-            pointsLabel.text = "Poäng: \(countingPoints)"
-            startGame()
+        } else if (timeLeft == 0) {
+            endGame()
+            
         }
-        else {
-            startGame()
-        }
+        
     }
     
     
@@ -117,9 +111,9 @@ class GameViewController: UIViewController {
         }
         if word == writeWord {
             countingPoints += 1
+            userInputTextField.text = ""
             pointsLabel.text = "Poäng: \(countingPoints)"
-            startGame()
-        } else {
+            getNewWord()
             
         }
     }
@@ -132,8 +126,7 @@ class GameViewController: UIViewController {
                           finalPointsVC.points = countingPoints
                           present(finalPointsVC, animated: true, completion: nil)
                       }
-        //Reset rounds
-        rounds = -1
+      
         
     }
 }
