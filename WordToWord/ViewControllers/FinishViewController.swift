@@ -34,7 +34,6 @@ class FinishViewController: UIViewController {
         } else {
             // handle the case where points is nil
         }
-        
     }
     
     @IBAction func saveScore(_ sender: Any) {

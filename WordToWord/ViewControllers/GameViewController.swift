@@ -17,8 +17,8 @@ class GameViewController: UIViewController {
     var points = 0
     var countingPoints = 0
     var countdownTimer: Timer!
-    var totalTime = 20 // Total time for the countdown timer
-    var timeLeft = 20 // Current time left for the countdown timer
+    var totalTime = 60 // Total time for the countdown timer
+    var timeLeft = 60 // Current time left for the countdown timer
     
     @IBOutlet weak var countdownLabel: UILabel!
     
