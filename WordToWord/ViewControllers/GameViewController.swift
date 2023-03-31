@@ -36,9 +36,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        print("from the top")
         startGame()
         
         userInputTextField.becomeFirstResponder()
@@ -47,14 +44,10 @@ class GameViewController: UIViewController {
         
     }
     
-    
     @objc func checkMatch(){
         checkAnswer()
     }
     
-
-    
-    // Function to end the countdown timer
     func startGame() {
         print("Inside start game")
         countdownTimer?.invalidate()
@@ -63,8 +56,6 @@ class GameViewController: UIViewController {
         getNewWord()
         
     }
-    
-    
     func getNewWord() {
         print("inside getNewWord")
         print(countingPoints)
@@ -72,7 +63,6 @@ class GameViewController: UIViewController {
             // Set the text of wordToWriteLabel to the shuffled word
             wordToWriteLabel.text = shuffledWord
             userInputTextField.text = ""
-            
         }
     }
     
@@ -81,24 +71,18 @@ class GameViewController: UIViewController {
        timeLeft = totalTime
        countdownLabel.text = "Time left: \(timeLeft)"
        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
-        
     }
+    
     // Function to update the countdown timer
     @objc func updateTimer() {
         if timeLeft > 0 {
             timeLeft -= 1
             countdownLabel.text = "Time left: \(timeLeft)"
             
-            //If the counter ends and not the right answer take on piont of, if the points are more then 0. Otherwise get a new round.
         } else if (timeLeft == 0) {
             endGame()
-            
         }
-        
     }
-    
-    
     
     func checkAnswer() {
         print("inside checkAnswer")
@@ -107,17 +91,14 @@ class GameViewController: UIViewController {
               let writeWord = userInputTextField.text
         else{
             return
-            
         }
         if word == writeWord {
             countingPoints += 1
             userInputTextField.text = ""
             pointsLabel.text = "Poäng: \(countingPoints)"
             getNewWord()
-            
         }
     }
-    
     
     func endGame(){
        
@@ -126,7 +107,5 @@ class GameViewController: UIViewController {
                           finalPointsVC.points = countingPoints
                           present(finalPointsVC, animated: true, completion: nil)
                       }
-      
-        
     }
 }

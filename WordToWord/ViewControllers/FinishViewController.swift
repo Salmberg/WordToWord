@@ -21,6 +21,11 @@ class FinishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+         view.addGestureRecognizer(tapGesture)
+        
+        tapGesture.cancelsTouchesInView = false
+        
         
         enterNameTextField.becomeFirstResponder()
         
@@ -48,5 +53,4 @@ class FinishViewController: UIViewController {
             }
         }
     }
-
 }

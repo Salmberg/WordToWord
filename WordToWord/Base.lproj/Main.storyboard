@@ -177,26 +177,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzy-mY-C4E">
-                                <rect key="frame" x="137" y="613" width="119" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play again">
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="m7J-wM-xsF" kind="show" id="bgS-cE-Qos"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter name to save on highscore:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s02-WI-yWc">
-                                <rect key="frame" x="61" y="369" width="284" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter name to save on highscore:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s02-WI-yWc">
+                                <rect key="frame" x="70" y="369" width="253" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xae-XC-2Gv">
-                                <rect key="frame" x="137" y="499" width="119" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xae-XC-2Gv">
+                                <rect key="frame" x="143" y="499" width="107.33333333333331" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save score">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,24 +194,39 @@
                                     <segue destination="SOj-d3-b1P" kind="show" identifier="highscoreSegue" id="60g-eC-Wnw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" restorationIdentifier="enterNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ID2-KI-1u9">
-                                <rect key="frame" x="61" y="436" width="271" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="enterNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ID2-KI-1u9">
+                                <rect key="frame" x="148.33333333333334" y="436" width="96.666666666666657" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zO4-sK-3rR">
+                                <rect key="frame" x="145.66666666666666" y="574" width="102" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play again">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveScore:" destination="Sft-dA-mZX" eventType="touchUpInside" id="New-OF-2S7"/>
+                                    <segue destination="m7J-wM-xsF" kind="show" id="V7Q-6e-Usa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fqM-qA-D6N"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
+                            <constraint firstItem="ID2-KI-1u9" firstAttribute="centerX" secondItem="wWS-uO-QdW" secondAttribute="centerX" id="05J-Og-ZmO"/>
                             <constraint firstItem="X23-ar-z6b" firstAttribute="top" secondItem="4X1-pZ-XhX" secondAttribute="bottom" constant="201.66999999999999" id="6fW-fl-ltz"/>
-                            <constraint firstItem="vzy-mY-C4E" firstAttribute="leading" secondItem="fqM-qA-D6N" secondAttribute="leading" constant="137" id="Bnn-W8-xDf"/>
-                            <constraint firstItem="fqM-qA-D6N" firstAttribute="bottom" secondItem="vzy-mY-C4E" secondAttribute="bottom" constant="170" id="Ida-Od-WOH"/>
+                            <constraint firstItem="s02-WI-yWc" firstAttribute="top" secondItem="X23-ar-z6b" secondAttribute="bottom" constant="49" id="HhX-Fc-eCF"/>
                             <constraint firstItem="X23-ar-z6b" firstAttribute="leading" secondItem="fqM-qA-D6N" secondAttribute="leading" constant="28" id="MEV-UR-BhQ"/>
                             <constraint firstItem="4X1-pZ-XhX" firstAttribute="top" secondItem="fqM-qA-D6N" secondAttribute="top" constant="9" id="Quy-Cr-xVm"/>
                             <constraint firstItem="fqM-qA-D6N" firstAttribute="trailing" secondItem="X23-ar-z6b" secondAttribute="trailing" constant="28" id="Vyq-FC-Amm"/>
-                            <constraint firstItem="fqM-qA-D6N" firstAttribute="trailing" secondItem="vzy-mY-C4E" secondAttribute="trailing" constant="137" id="YvD-y3-baO"/>
+                            <constraint firstItem="xae-XC-2Gv" firstAttribute="top" secondItem="ID2-KI-1u9" secondAttribute="bottom" constant="29" id="aEZ-PL-kbU"/>
+                            <constraint firstItem="ID2-KI-1u9" firstAttribute="top" secondItem="s02-WI-yWc" secondAttribute="bottom" constant="46.670000000000002" id="cuD-YP-0Px"/>
                             <constraint firstItem="4X1-pZ-XhX" firstAttribute="leading" secondItem="fqM-qA-D6N" secondAttribute="leading" constant="61" id="jNc-dr-EIb"/>
+                            <constraint firstItem="fqM-qA-D6N" firstAttribute="bottom" secondItem="zO4-sK-3rR" secondAttribute="bottom" constant="209" id="lKt-Vc-Cjj"/>
+                            <constraint firstItem="s02-WI-yWc" firstAttribute="centerX" secondItem="wWS-uO-QdW" secondAttribute="centerX" id="nYd-y4-l5D"/>
+                            <constraint firstItem="zO4-sK-3rR" firstAttribute="centerX" secondItem="wWS-uO-QdW" secondAttribute="centerX" id="wPl-mI-r14"/>
+                            <constraint firstItem="xae-XC-2Gv" firstAttribute="centerX" secondItem="wWS-uO-QdW" secondAttribute="centerX" id="yml-Co-D1M"/>
                             <constraint firstItem="fqM-qA-D6N" firstAttribute="trailing" secondItem="4X1-pZ-XhX" secondAttribute="trailing" constant="61" id="zXI-oD-n5d"/>
                         </constraints>
                     </view>
@@ -272,8 +275,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LuE-rh-k8Z"/>
-        <segue reference="ZLQ-3Y-LCC"/>
+        <segue reference="60g-eC-Wnw"/>
+        <segue reference="V7Q-6e-Usa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Ämne" width="499" height="489"/>

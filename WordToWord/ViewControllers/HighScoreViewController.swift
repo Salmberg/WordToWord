@@ -67,9 +67,9 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
             // Sort the high scores in descending order based on points
             highScores.sort { ($0["points"] as? Int ?? 0) > ($1["points"] as? Int ?? 0) }
             
-            // Remove any scores beyond the top 3
-            if highScores.count > 3 {
-                highScores.removeLast(highScores.count - 3)
+            // Remove any scores beyond the top 10
+            if highScores.count > 10 {
+                highScores.removeLast(highScores.count - 10)
             }
             
             // Save the updated high scores to UserDefaults and reload the table view
